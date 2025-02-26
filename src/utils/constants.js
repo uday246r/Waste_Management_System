@@ -1,0 +1,2 @@
+export const LOGO_URL =
+"https://media.istockphoto.com/id/1384532150/vector/recycle-symbol-inside-circle-with-leaves-zero-waste-concept.jpg?s=2048x2048&w=is&k=20&c=8c-KEoAaBI32289PvLtk8DLI7imEZKaOXl4_S9s3fqo="

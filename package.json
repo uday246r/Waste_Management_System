@@ -1,0 +1,36 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "This is Waste Mnagement System ",
+  "keywords": [],
+  "homepage": "https://github.com/uday246r/Waste_Management_System#readme",
+  "bugs": {
+    "url": "https://github.com/uday246r/Waste_Management_System/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uday246r/Waste_Management_System.git"
+  },
+  "license": "ISC",
+  "author": "Uday",
+  "type": "commonjs",
+  "main": "./App.js",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.26.3",
+    "parcel": "latest",
+    "process": "^0.11.10"
+  },
+  "source": "./index.html",
+  "browserslist": [
+    "> 0.5%, last 2 versions, not dead"
+  ]
+}
