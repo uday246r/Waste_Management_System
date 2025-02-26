@@ -14,10 +14,9 @@
   "license": "ISC",
   "author": "Uday",
   "type": "commonjs",
-  "main": "./App.js",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+  "start": "parcel index.html",
+  "build": "parcel build index.html"
   },
   "dependencies": {
     "react": "^19.0.0",
