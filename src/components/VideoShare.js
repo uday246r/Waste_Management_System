@@ -5,25 +5,27 @@ function VideoSharing() {
     const [videoFile, setVideoFile] = useState(null);
 
     const handleUpload = () => {
+        if (!videoTitle || !videoFile) {
+            alert("Please provide a video title and select a file.");
+            return;
+        }
         alert(`Uploaded video: ${videoTitle}`);
     };
 
     return (
-        <div>
+        <div className="video-sharing-container">
             <h2>Share a Video</h2>
             <input
                 type="text"
-                placeholder="Video Title"
+                placeholder="Enter Video Title"
                 value={videoTitle}
                 onChange={(e) => setVideoTitle(e.target.value)}
             />
-            <br />
             <input
                 type="file"
                 accept="video/*"
                 onChange={(e) => setVideoFile(e.target.files[0])}
             />
-            <br />
             <button onClick={handleUpload}>Upload</button>
         </div>
     );

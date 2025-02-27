@@ -6,6 +6,8 @@ import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import PickupScheduler from "./components/PickUpScheduling";
 import VideoSharing from "./components/VideoShare";
+import Dashboard from "./components/Dashboard";
+import SignUpPage from "./components/SignUp";
 
 const AppLayout = () =>{
     return(
@@ -30,12 +32,20 @@ const appRouter = createBrowserRouter([
                 element: <Login />
             },
             {
+                path: "/signUp",
+                element: <SignUpPage />
+            },
+            {
                 path: "/pickUpScheduler",
                 element: <PickupScheduler />
             },
             {
                 path: "/videoSharing",
                 element: <VideoSharing />
+            },
+            {
+                path: "/dashboard",
+                element: <Dashboard />
             }
         ]
     }

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const SignUpPage = () => {
   const [email, setEmail] = useState("");
+  const [name,setName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
@@ -12,7 +13,14 @@ const Login = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2>SignUp</h2>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
         <input
           type="email"
           placeholder="Enter Email"
@@ -27,10 +35,10 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit">SignUp</button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default SignUpPage;

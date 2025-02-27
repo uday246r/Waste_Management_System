@@ -3,60 +3,50 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
-    const [ btnName,setBtnName ] = useState("Login");
-    const [searchText,setsearchText] = useState();
-    
+    const [btnName, setBtnName] = useState("Login");
+    const [searchText, setSearchText] = useState("");
+
     const navigate = useNavigate();
 
-    const handleLogin = () =>{
-        if(btnName === "Login"){
-            setBtnName("Logout");
+    const handleLogin = () => {
+        if (btnName === "Login") {
+            setBtnName("SignUp");
             navigate("/login");
-        }
-        else{
+        } else {
             setBtnName("Login");
-            navigate("/");
+            navigate("/signUp");
         }
-    }
-    return(
-        <div className = "header">
+    };
 
-            <div className = "logo-container">
-                <img className="logo" src={LOGO_URL} />
+    return (
+        <header className="header">
+            <div className="logo-container">
+                <img className="logo" src={LOGO_URL} alt="Logo" />
             </div>
-
-            <div className="search">
-                    <input 
-                    type="text" 
-                    className="search-box" 
-                    value={searchText} 
-                    onChange={(e)=>{
-                        setsearchText(e.target.value);
-                    }} 
-                    />
-                    <button>Search</button>
-                </div>
 
             <div className="nav-items">
                 <ul>
-                    <li>
-                       <Link to="/">Home</Link> 
-                    </li>
-                    <li>
-                        <Link to="/dashboard">Dashboard</Link>
-                    </li>
-                    <li>
-                        <Link to="/pickUpScheduler">PickUp Scheduling</Link>
-                    </li>
-                    <li>
-                        <Link to="/videoSharing">Video Sharing</Link>
-                    </li>
-                    
-                    <button className="login" onClick={handleLogin}>{btnName}</button>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
+                    <li><Link to="/pickUpScheduler">PickUp Scheduling</Link></li>
+                    <li><Link to="/videoSharing">Video Sharing</Link></li>
                 </ul>
             </div>
-        </div>
-    )
-}
+
+            <div className="search">
+                <input 
+                    type="text" 
+                    className="search-box" 
+                    placeholder="Search..." 
+                    value={searchText} 
+                    onChange={(e) => setSearchText(e.target.value)} 
+                />
+                <button className="search-btn">Search</button>
+            </div>
+
+            <button className="login-btn" onClick={handleLogin}>{btnName}</button>
+        </header>
+    );
+};
 
 export default Header;
