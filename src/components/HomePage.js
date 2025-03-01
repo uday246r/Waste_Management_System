@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <div className="home-container">
+      
       <div className="firstSection">
         <h1>Welcome to Waste Management Support System</h1>
         <p>
@@ -16,6 +17,7 @@ const HomePage = () => {
           <Link to="/login" className="homeLogin">Already a member?</Link>
         </div>
       </div>
+     
     </div>
   );
 };

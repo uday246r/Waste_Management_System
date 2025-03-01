@@ -1,12 +1,25 @@
 import React, { useState } from "react";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [loginFormData,setLoginFormData] = useState({
+    email: "",
+    password: "",
+  });
+  
+  const handleChange = (e) =>{
+    setLoginFormData({
+      // ...loginFormData,
+      [e.target.name] : e.target.value,
+    })
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Email: ${email}\nPassword: ${password}`);
+    alert("Login Successfully");
+
+    setLoginFormData({
+      email: "",
+      password: "",
+    })
   };
 
   return (
@@ -16,15 +29,15 @@ const Login = () => {
         <input
           type="email"
           placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={loginFormData.email}
+          onChange={handleChange}
           required
         />
         <input
           type="password"
           placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={loginFormData.password}
+          onChange={handleChange}
           required
         />
         <button type="submit">Login</button>
